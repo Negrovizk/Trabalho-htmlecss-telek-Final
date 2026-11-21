@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 420" role="img" aria-label="Cultura, música e herança afro-brasileira">
+  <rect width="520" height="420" fill="#eadfce"/>
+  <circle cx="420" cy="75" r="42" fill="#d8c4a4"/>
+  <path d="M0 365 Q120 325 250 365 T520 355 V420 H0 Z" fill="#cbb397"/>
+  <ellipse cx="260" cy="200" rx="58" ry="22" fill="#fff8e8" stroke="#753b2e" stroke-width="6"/>
+  <path d="M202 200 L218 335 Q260 350 302 335 L318 200" fill="#9a5643" stroke="#4c251d" stroke-width="5"/>
+  <path d="M212 220 L238 332 M260 222 L260 340 M308 220 L282 332" stroke="#d5a85e" stroke-width="4"/>
+  <text x="260" y="55" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" font-weight="bold" fill="#4c251d">Herança Cultural</text>
+  <text x="260" y="400" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" fill="#4c251d">Saberes, ritmos e tradições</text>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 420" role="img" aria-label="Cais do Valongo e Patrimônio Mundial">
+  <rect width="520" height="420" fill="#eadfce"/>
+  <circle cx="420" cy="75" r="42" fill="#d8c4a4"/>
+  <path d="M0 340 Q130 315 260 340 T520 330 V420 H0 Z" fill="#8b6f56"/>
+  <path d="M0 370 Q150 350 300 370 T520 365 V420 H0 Z" fill="#496548"/>
+  <rect x="90" y="250" width="340" height="35" rx="6" fill="#753b2e"/>
+  <rect x="115" y="215" width="290" height="35" rx="6" fill="#9a5643"/>
+  <rect x="145" y="180" width="230" height="35" rx="6" fill="#b08b67"/>
+  <text x="260" y="55" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" font-weight="bold" fill="#4c251d">Cais do Valongo</text>
+  <text x="260" y="400" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" fill="#fffdf8">Sítio arqueológico e memória</text>
+</svg>

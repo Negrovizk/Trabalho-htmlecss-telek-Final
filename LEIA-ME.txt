@@ -1,0 +1,18 @@
+TRABALHO 3 — CSS FINAL (MEMÓRIAS DA ESCRAVIDÃO NO BRASIL)
+
+Estrutura de arquivos (padrão Boilerplate / GitHub Pages):
+- index.html (na raiz, facilitando a publicação direta no GitHub Pages)
+- css/modern-normalize.css
+- css/style.css
+- imagens/ (logo.svg, escravidao-1..4.svg, patrimonio-1..4.svg)
+
+O que foi adicionado e aprimorado:
+1. Duas novas sessões (<section>):
+   - #contribuicao: Formulário organizado em CSS Grid de 2 colunas (labels à esquerda e campos à direita) com 7 campos de tipos diferentes (text, email, date, select, url, number, textarea).
+   - #patrimonio: Segunda galeria temática organizada com CSS Grid responsivo.
+2. Menu de navegação atualizado com links diretos para #contribuicao e #patrimonio.
+3. SEO e Redes Sociais: Metatags gerais (description, keywords, author, robots, canonical, theme-color) e metatags Open Graph + Twitter Cards.
+4. Boas práticas e acessibilidade: Variáveis CSS para todas as cores, espaçamentos e bordas; atributos width/height e loading="lazy" nas imagens para melhorar performance (CLS/LCP no Seomator); link "Pular para o conteúdo principal"; responsividade testada de 375px a 1920px.
+5. Nota sobre imagens: As ilustrações SVG garantem carregamento rápido e sem falhas; caso deseje substituir por fotografias históricas reais de acervo (ex.: Wikimedia Commons), mantenha os nomes dos arquivos ou atualize os caminhos no index.html.
+
+Aluno: Igor de Avila Monteiro — 2026

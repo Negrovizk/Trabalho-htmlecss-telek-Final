@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 420" role="img" aria-label="Serra da Barriga e Quilombo dos Palmares">
+  <rect width="520" height="420" fill="#eadfce"/>
+  <circle cx="110" cy="80" r="38" fill="#d5a85e"/>
+  <path d="M0 350 L160 180 L300 310 L390 210 L520 350 V420 H0 Z" fill="#496548"/>
+  <path d="M0 365 Q140 330 280 365 T520 355 V420 H0 Z" fill="#cbb397"/>
+  <circle cx="260" cy="240" r="28" fill="#753b2e"/>
+  <text x="260" y="55" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" font-weight="bold" fill="#4c251d">Serra da Barriga</text>
+  <text x="260" y="400" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" fill="#4c251d">Território de resistência quilombola</text>
+</svg>

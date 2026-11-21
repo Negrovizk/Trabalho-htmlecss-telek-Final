@@ -1,0 +1,626 @@
+/* ==========================================================================
+   1. Variáveis CSS e Configurações Globais
+   ========================================================================== */
+:root {
+  --cor-fundo: #f6f1e8;
+  --cor-fundo-secao: #e9dfd0;
+  --cor-superficie: #fffdf8;
+  --cor-texto: #28231f;
+  --cor-texto-suave: #594e46;
+  --cor-destaque: #753b2e;
+  --cor-destaque-escuro: #4c251d;
+  --cor-secundaria: #d8c4a4;
+  --cor-borda: #d6c8b6;
+  --cor-foco: #bd8748;
+  --cor-sombra: rgba(0, 0, 0, 0.08);
+  --largura-maxima: 1100px;
+  --raio-borda: 12px;
+  --transicao-padrao: 0.2s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--cor-destaque);
+  transition: color var(--transicao-padrao);
+}
+
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible,
+label:focus-visible {
+  outline: 3px solid var(--cor-foco);
+  outline-offset: 3px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+}
+
+h2 {
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+}
+
+p {
+  margin-top: 0;
+}
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+  padding: 10px 0;
+  color: var(--cor-texto-suave);
+  font-size: 0.875rem;
+}
+
+/* Link de acessibilidade para navegação por teclado */
+.pular-conteudo {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.pular-conteudo:focus {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 2000;
+  width: auto;
+  height: auto;
+  padding: 10px 16px;
+  background-color: var(--cor-destaque-escuro);
+  color: var(--cor-superficie);
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   2. Cabeçalho e Menu Responsivo
+   ========================================================================== */
+.cabecalho {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 76px;
+  padding: 12px 5%;
+  background-color: var(--cor-superficie);
+  border-bottom: 1px solid var(--cor-borda);
+  box-shadow: 0 3px 12px var(--cor-sombra);
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--cor-destaque-escuro);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.logo {
+  width: 44px;
+  height: 44px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.menu a {
+  color: var(--cor-texto);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  color: var(--cor-destaque);
+}
+
+.menu-toggle {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+.menu-icone {
+  display: none;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   3. Estrutura de Sessões e Conteúdo Histórico
+   ========================================================================== */
+.secao {
+  width: min(100% - 40px, var(--largura-maxima));
+  margin-inline: auto;
+  padding: 70px 0;
+}
+
+.secao-destaque {
+  width: 100%;
+  max-width: none;
+  padding: 70px max(20px, calc((100% - var(--largura-maxima)) / 2));
+  background-color: var(--cor-fundo-secao);
+}
+
+.introducao,
+.titulo-secao {
+  max-width: 780px;
+  margin: 0 auto 38px;
+  text-align: center;
+}
+
+.etiqueta {
+  margin-bottom: 10px;
+  color: var(--cor-destaque);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.introducao h1 {
+  margin: 0 0 20px;
+  color: var(--cor-destaque-escuro);
+}
+
+.titulo-secao h2 {
+  margin: 10px 0;
+  color: var(--cor-destaque-escuro);
+}
+
+.subtitulo {
+  max-width: 720px;
+  margin-inline: auto;
+  color: var(--cor-texto-suave);
+  font-size: 1.1rem;
+}
+
+.imagem-destaque {
+  margin-bottom: 45px;
+}
+
+.imagem-destaque img {
+  width: 100%;
+  max-height: 520px;
+  object-fit: cover;
+  border-radius: var(--raio-borda);
+}
+
+.conteudo-historico {
+  max-width: 850px;
+  margin-inline: auto;
+}
+
+.conteudo-historico h2 {
+  margin: 45px 0 18px;
+  color: var(--cor-destaque-escuro);
+}
+
+.conteudo-historico p {
+  text-align: justify;
+}
+
+.imagem-texto {
+  max-width: 720px;
+  margin: 30px auto;
+}
+
+.imagem-texto img {
+  width: 100%;
+  max-height: 440px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* ==========================================================================
+   4. Galeria 1 (Flexbox) e Galeria 2 (CSS Grid)
+   ========================================================================== */
+.grade-galeria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 24px;
+  max-width: var(--largura-maxima);
+  margin-inline: auto;
+}
+
+.grade-galeria .cartao-imagem {
+  flex: 1 1 230px;
+  min-width: 0;
+  max-width: 350px;
+}
+
+.grade-patrimonio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+  gap: 24px;
+  max-width: var(--largura-maxima);
+  margin-inline: auto;
+}
+
+.cartao-imagem {
+  overflow: hidden;
+  background-color: var(--cor-superficie);
+  border-radius: var(--raio-borda);
+  box-shadow: 0 5px 15px var(--cor-sombra);
+  transition: transform var(--transicao-padrao);
+}
+
+.cartao-imagem:hover {
+  transform: translateY(-4px);
+}
+
+.cartao-imagem img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.cartao-imagem figcaption {
+  padding: 20px;
+}
+
+.cartao-imagem h3 {
+  margin: 0 0 10px;
+  color: var(--cor-destaque-escuro);
+  font-size: 1.25rem;
+}
+
+.cartao-imagem p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   5. Nova Sessão: Formulário em Grid de 2 Colunas (Labels | Campos)
+   ========================================================================== */
+.formulario-grid {
+  display: grid;
+  grid-template-columns: minmax(180px, 260px) 1fr;
+  align-items: center;
+  gap: 18px 24px;
+  max-width: 820px;
+  margin-inline: auto;
+  padding: 36px;
+  background-color: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-borda);
+  box-shadow: 0 5px 18px var(--cor-sombra);
+}
+
+.formulario-grid label {
+  color: var(--cor-destaque-escuro);
+  font-weight: 600;
+  text-align: right;
+}
+
+.formulario-grid input,
+.formulario-grid select,
+.formulario-grid textarea {
+  width: 100%;
+  padding: 12px 14px;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: border-color var(--transicao-padrao), background-color var(--transicao-padrao);
+}
+
+.formulario-grid input:focus,
+.formulario-grid select:focus,
+.formulario-grid textarea:focus {
+  border-color: var(--cor-destaque);
+  background-color: var(--cor-superficie);
+}
+
+.formulario-grid textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.formulario-acoes {
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.botao-enviar,
+.botao-limpar {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color var(--transicao-padrao), color var(--transicao-padrao);
+}
+
+.botao-enviar {
+  background-color: var(--cor-destaque);
+  color: var(--cor-superficie);
+  border: 1px solid var(--cor-destaque);
+}
+
+.botao-enviar:hover {
+  background-color: var(--cor-destaque-escuro);
+  border-color: var(--cor-destaque-escuro);
+}
+
+.botao-limpar {
+  background-color: transparent;
+  color: var(--cor-destaque-escuro);
+  border: 1px solid var(--cor-borda);
+}
+
+.botao-limpar:hover {
+  background-color: var(--cor-fundo-secao);
+}
+
+/* ==========================================================================
+   6. Referências e Rodapé
+   ========================================================================== */
+.referencias {
+  max-width: var(--largura-maxima);
+  margin: 60px auto 0;
+  padding-top: 30px;
+  border-top: 1px solid var(--cor-borda);
+}
+
+.referencias h2 {
+  color: var(--cor-destaque-escuro);
+}
+
+.referencias li {
+  margin-bottom: 12px;
+}
+
+.referencias a {
+  overflow-wrap: anywhere;
+}
+
+.referencias p {
+  margin-top: 25px;
+  font-size: 0.9rem;
+}
+
+.rodape {
+  padding: 35px 20px;
+  background-color: var(--cor-destaque-escuro);
+  color: var(--cor-superficie);
+  text-align: center;
+}
+
+.rodape p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   7. Responsividade (Tablets e Celulares até 375px)
+   ========================================================================== */
+@media (max-width: 820px) {
+  .cabecalho {
+    min-height: 68px;
+    padding: 10px 20px;
+  }
+
+  .marca {
+    font-size: 0.95rem;
+  }
+
+  .logo {
+    width: 38px;
+    height: 38px;
+  }
+
+  .menu-icone {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    border-radius: 6px;
+  }
+
+  .menu-icone span {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background-color: var(--cor-destaque-escuro);
+    border-radius: 3px;
+    transition: transform var(--transicao-padrao);
+  }
+
+  .menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 10px 20px;
+    background-color: var(--cor-superficie);
+    border-bottom: 1px solid var(--cor-borda);
+    box-shadow: 0 8px 12px var(--cor-sombra);
+  }
+
+  .menu a {
+    padding: 12px 8px;
+    border-bottom: 1px solid var(--cor-fundo-secao);
+  }
+
+  .menu-toggle:checked ~ .menu {
+    display: flex;
+  }
+
+  .menu-toggle:focus-visible + .menu-icone {
+    outline: 3px solid var(--cor-foco);
+    outline-offset: 4px;
+  }
+
+  .menu-toggle:checked + .menu-icone span:first-child {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .menu-toggle:checked + .menu-icone span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle:checked + .menu-icone span:last-child {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+@media (max-width: 760px) {
+  .secao {
+    width: calc(100% - 32px);
+    padding: 45px 0;
+  }
+
+  .secao-destaque {
+    padding: 45px 16px;
+  }
+
+  .introducao,
+  .titulo-secao {
+    margin-bottom: 26px;
+  }
+
+  .subtitulo {
+    font-size: 1rem;
+  }
+
+  .conteudo-historico p {
+    text-align: left;
+  }
+
+  .grade-galeria {
+    gap: 18px;
+  }
+
+  .grade-galeria .cartao-imagem {
+    flex: 1 1 100%;
+    max-width: 500px;
+  }
+
+  .cartao-imagem img {
+    height: auto;
+    max-height: 320px;
+    aspect-ratio: 3 / 2;
+  }
+
+  .formulario-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 24px 18px;
+  }
+
+  .formulario-grid label {
+    text-align: left;
+    margin-top: 8px;
+  }
+
+  .formulario-acoes {
+    grid-column: 1;
+    margin-top: 14px;
+  }
+
+  .referencias {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 400px) {
+  body {
+    font-size: 15px;
+  }
+
+  .cabecalho {
+    padding-inline: 12px;
+  }
+
+  .marca {
+    gap: 8px;
+    font-size: 0.85rem;
+  }
+
+  .secao {
+    width: calc(100% - 24px);
+  }
+
+  .secao-destaque {
+    padding-inline: 12px;
+  }
+
+  .cartao-imagem figcaption {
+    padding: 15px;
+  }
+
+  .botao-enviar,
+  .botao-limpar {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
